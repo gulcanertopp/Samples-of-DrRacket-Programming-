@@ -1,0 +1,34 @@
+;a)
+;Write a recursive function in Racket that finds
+;if all the measurements in a list of temperature measurements are between 10 and 70.
+;If so, the function returns true otherwise it returns false. (50 points.)
+
+(define (check-range1 lst)
+  (cond
+    [(empty? lst) #t]
+    [(and (>= (first lst) 10) (<= (first lst) 70)) (check-range1 (rest lst))]
+    [else #f]))
+
+;; Tests:
+(check-range1 (list 7 10 9 200 5 -3))
+(check-range1 (list 16 20 25 40 45))
+
+
+;b)
+;Write an iterative function (using for loop) in Racket that finds
+;if all the measurements in a list of temperature measurements are between 10 and 70.
+;If so, the function returns true otherwise it returns false. (50 points.)
+
+(define (check-range2 lst)
+  (define control #t)
+  (for ([i (in-range 0 (length lst))])
+       (if (and (>= (list-ref lst i) 10) (<= (list-ref lst i) 70))          
+           (display "")
+           (set! control #f)))
+  (display control)
+  (newline)
+)
+
+;; Tests:
+(check-range2 (list 7 10 9 200 5 -3))
+(check-range2 (list 16 20 25 40 45))
