@@ -1,0 +1,33 @@
+;a)
+;Write a recursive function in Racket that takes a list of toy prices
+;as a parameter and computes the average price of a toy.
+;The average is the sum of all prices divided by the number of toys. (50 points.)
+
+(define (sum lst)
+  (cond [(empty? lst) 0]
+        [else (+ (first lst) (sum (rest lst)))]))
+
+(define (count lst)
+  (cond [(empty? lst) 0]
+        [else (+ 1 (count (rest lst)))]))
+
+;; Tests:
+(define L1 (list 10 40 4 6))
+(define average (/ (sum L1) (count L1)))
+(display average)
+(newline)
+
+;b)
+;Write an iterative function (using for loop) in Racket that takes a list of toy prices
+;as a parameter and computes the average price of a toy. The average is the sum of all prices
+;divided by the number of toys. (50 points.)
+
+(define (average-list lst)
+  (define sum 0)
+  (define average 0)  
+  (for ([i (in-range 0 (length lst))])
+       (set! sum (+ sum (list-ref lst i)))) 
+  (display (/ sum (length lst))))
+
+;; Tests:
+(average-list L1)
