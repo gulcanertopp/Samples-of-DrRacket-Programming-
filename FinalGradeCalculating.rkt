@@ -1,5 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
+;;The program calculates the student's average passing score by taking 4 homework grades, 2 project grades, 1 visa grade and 1 final ;;grade from the user and reflects it on the screen
 #reader(lib "htdp-advanced-reader.ss" "lang")((modname |1|) (read-case-sensitive #t) (teachpacks ((lib "universe.rkt" "teachpack" "2htdp"))) (htdp-settings #(#t constructor repeating-decimal #t #t none #f ((lib "universe.rkt" "teachpack" "2htdp")))))
 "-------------------------1------------------------------------"
 
